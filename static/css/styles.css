@@ -1,0 +1,11 @@
+.nav-item.active {
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+  }
+
+* {
+    transition: all 1000ms ease;
+}
+
+  

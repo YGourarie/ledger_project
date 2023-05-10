@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block title %}
+<h1>Notepad View</h1>
+{% endblock %} {% block content %} {% if joined_table|length == 0 %}
+<h2>No Submissions</h2>
+{%else%}
+
+<form method="POST" action="{% url 'hub:delete_all_transactions' %}">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-outline-danger">
+    Delete all transactions
+  </button>
+</form>
+
+{%endif%}
+
+
+<ul class="list-group">
+  {% for item in joined_table %}
+  <li class="list-group-item">
+    {{item.string}} at {{item.time}} {% if item.type == 'deposit'%}
+    <a href="/hub/deposit_delete/{{item.id}}">
+      <button type="button" class="btn btn-outline-danger">Delete</button>
+    </a>
+    {% elif item.type == 'payment' %}
+    <a href="/hub/internalpayment_delete/{{item.id}}">
+      <button type="button" class="btn btn-outline-danger">Delete</button>
+    </a>
+    {%endif%}
+  </li>
+  {%endfor%}
+</ul>
+{% endblock content%}

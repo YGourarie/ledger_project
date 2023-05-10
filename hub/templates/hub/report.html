@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% block title %}
+  <h1> REPORT VIEW</h1>
+{% endblock %}
+{% block content %}
+    <ul>
+        {% for key,value in bank.items %}
+        <li>{{key}} owes {{value.owes}}</li>
+        {%endfor%}
+    </ul>
+    <!-- <h2>{{bank}}</h2>
+    <h2>{{owed_list}}</h2> -->
+    <ul>
+        {% for item in answer_list %}
+        <li>{{item}}</li>
+        {%endfor%}
+    </ul>
+    <!-- <p>{{owed_list}}</p> -->
+{% endblock content%}

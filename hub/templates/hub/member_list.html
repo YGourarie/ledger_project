@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block title %}
+<h1>Members Page</h1>
+{% endblock %} {% block content %}
+
+{% if joined_table|length == 0 %}
+<h2>No Members</h2>
+{%else%}
+
+<form method="POST" action="{% url 'hub:delete_all_members' %}">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-outline-danger">
+    Delete all transactions
+  </button>
+</form>
+{%endif%}
+
+
+    <div class="container-md">
+        <ul class="list-group list-group-flush">
+            {% for member in members%}
+                <li class="list-group-item">
+                    {{member | lower | capfirst}}
+                    <a href="/hub/member_delete/{{member.id}}">
+                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                    </a>
+                </li>
+            {%endfor%}
+        </ul>
+    </div>
+
+{% endblock content%}
