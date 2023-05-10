@@ -31,8 +31,3 @@ Once you have the application up and running, you can start using the different 
 3. Record internal payments by navigating to the internal payment page and filling out the form
 4. Generate reports by navigating to the report page and selecting the relevant options
 
-## Contributions
-Contributions to the project are welcome. If you find any issues with the application, please report them by opening an issue on the GitHub repository. If you would like to contribute code to the project, please fork the repository, create a new branch, and submit a pull request with your changes.
-
-## License
-This project is licensed under the MIT license. See the LICENSE file for more details.
